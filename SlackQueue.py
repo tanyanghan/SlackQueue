@@ -67,7 +67,6 @@ class sqListener(QueueListener,Handler):
         for key in self.payload.keys():
             if hasattr(record,key):
                 new_payload[key] = record.__dict__[key]
-                del record.__dict__[key]
 
         #format the message and add to payload
         msg = self.format(record)
